@@ -94,9 +94,7 @@ export default function Header() {
               <Link href="/etkinlikler" className="text-gray-700 hover:text-[#1B365D] font-medium">
                 Etkinlikler
               </Link>
-              <Link href="/basinda-biz" className="text-gray-700 hover:text-[#1B365D] font-medium">
-                Son Dakika Ekonomi Haberleri
-              </Link>
+              
               <Link href="/iletisim" className="text-gray-700 hover:text-[#1B365D] font-medium">
                 İletişim
               </Link>
