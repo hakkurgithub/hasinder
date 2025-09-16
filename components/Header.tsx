@@ -93,6 +93,10 @@ export default function Header() {
               </Link>
               <Link href="/etkinlikler" className="text-gray-700 hover:text-[#1B365D] font-medium">
                 Etkinlikler
+                <Link href="/basinda-biz" className="text-gray-700 hover:text-[#1B365D] font-medium">
+                  Basında Biz
+                </Link>
+
               </Link>
               
               <Link href="/iletisim" className="text-gray-700 hover:text-[#1B365D] font-medium">
