@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState } from 'react';
@@ -25,11 +24,9 @@ export default function Header() {
   };
 
   const scrollToMembership = () => {
-    // Ana sayfada değilsek önce ana sayfaya git
     if (window.location.pathname !== '/') {
       window.location.href = '/#uyelik';
     } else {
-      // Ana sayfadaysak direkt scroll yap
       scrollToSection('uyelik');
     }
   };
@@ -44,7 +41,7 @@ export default function Header() {
       <header className="bg-white shadow-sm border-b border-gray-100 fixed w-full top-0 z-50">
         <div className="mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
-            {/* Mobile Menu Button - Sol tarafta */}
+            {/* Mobile Menu Button */}
             <div className="flex items-center">
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
@@ -93,12 +90,10 @@ export default function Header() {
               </Link>
               <Link href="/etkinlikler" className="text-gray-700 hover:text-[#1B365D] font-medium">
                 Etkinlikler
-                <Link href="/basinda-biz" className="text-gray-700 hover:text-[#1B365D] font-medium">
-                  Basında Biz
-                </Link>
-
               </Link>
-              
+              <Link href="/basinda-biz" className="text-gray-700 hover:text-[#1B365D] font-medium">
+                Basında Biz
+              </Link>
               <Link href="/iletisim" className="text-gray-700 hover:text-[#1B365D] font-medium">
                 İletişim
               </Link>
@@ -182,7 +177,7 @@ export default function Header() {
                 Etkinlikler
               </Link>
               <Link href="/basinda-biz" className="block text-gray-700 hover:text-[#1B365D] font-medium">
-                Son Dakika Ekonomi Haberleri
+                Basında Biz
               </Link>
               <Link href="/iletisim" className="block text-gray-700 hover:text-[#1B365D] font-medium">
                 İletişim
@@ -225,7 +220,6 @@ export default function Header() {
           </div>
         )}
 
-        {/* Dropdown dışına tıklandığında kapatmak için overlay */}
         {showLanguageDropdown && (
           <div 
             className="fixed inset-0 z-40"
@@ -234,7 +228,6 @@ export default function Header() {
         )}
       </header>
 
-      {/* Membership Modal */}
       <MembershipModal 
         isOpen={showMembershipModal} 
         onClose={() => setShowMembershipModal(false)} 
