@@ -1,11 +1,1 @@
-{
-  "version": 4,
-  "routes": {},
-  "dynamicRoutes": {},
-  "notFoundRoutes": [],
-  "preview": {
-    "previewModeId": "28744330aef1c70b46d258c88a7c489f",
-    "previewModeSigningKey": "7b0fe9bf73fc1e4a3a57d60c80ab9337bdd829ef7efd0effeae0a38f779d1cf4",
-    "previewModeEncryptionKey": "eb3ecf67a4313895aed47f072e8c2387cccff4f47b968dd5e6176e83ef0b8ee9"
-  }
-}
+{"version":4,"routes":{"/firsatlar/1":{},"/firsatlar/2":{},"/firsatlar/3":{},"/firsatlar/4":{},"/firsatlar/5":{},"/firsatlar/akilli-tarim":{},"/firsatlar/gunes-enerjisi":{},"/firsatlar/fintech-cozum":{},"/firsatlar/surdurulebilir-ambalaj":{},"/firsatlar/saglik-teknoloji":{}},"dynamicRoutes":{"/firsatlar/[id]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/firsatlar/[id]","routeRegex":"^\\/firsatlar\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"39501ac24ec9e392e13c025a3d88abf8","previewModeSigningKey":"27712be60f00e633914c1afd87ba3ebbd1c74b25868c448fbd4304ced34745c8","previewModeEncryptionKey":"d2838739ab81b03b153ad04a045b3207dfcc0b1f3bce59360e6e0daa5659b7e3"}}

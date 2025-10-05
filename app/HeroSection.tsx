@@ -1,9 +1,6 @@
-
 'use client';
-
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-
 const slides = [
   {
     id: 1,
@@ -27,26 +24,20 @@ const slides = [
     cta: "Fırsatları Keşfet"
   }
 ];
-
 interface HeroSectionProps {
   onMembershipClick?: () => void;
 }
-
 export default function HeroSection({ onMembershipClick }: HeroSectionProps) {
   const [currentSlide, setCurrentSlide] = useState(0);
-
   useEffect(() => {
     const timer = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 5000);
-
     return () => clearInterval(timer);
   }, []);
-
   const goToSlide = (index: number) => {
     setCurrentSlide(index);
   };
-
   return (
     <section className="relative h-screen overflow-hidden">
       {slides.map((slide, index) => (
@@ -62,7 +53,6 @@ export default function HeroSection({ onMembershipClick }: HeroSectionProps) {
           >
             <div className="absolute inset-0 bg-gradient-to-r from-[#1B365D]/80 to-[#1B365D]/40"></div>
           </div>
-
           <div className="relative z-10 h-full flex items-center">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
               <div className="max-w-3xl">
@@ -92,12 +82,6 @@ export default function HeroSection({ onMembershipClick }: HeroSectionProps) {
                     Firmaları Keşfet
                   </Link>
                   <Link
-                    href="/basinda-biz"
-                    className="bg-red-600 text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-red-700 hover:scale-105 hover:shadow-lg transition-all duration-300 whitespace-nowrap cursor-pointer inline-block text-center transform flex items-center justify-center"
-                  >
-                    <i className="ri-news-line w-5 h-5 flex items-center justify-center mr-2"></i>
-                    Son Dakika Ekonomi
-                  </Link>
                 </div>
               </div>
             </div>

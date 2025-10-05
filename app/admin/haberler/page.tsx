@@ -277,12 +277,6 @@ export default function AdminHaberlerPage() {
           </div>
           <div className="flex items-center gap-4">
             <Link 
-              href="/basinda-biz"
-              className="bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 cursor-pointer"
-            >
-              Siteyi Görüntüle
-            </Link>
-            <button
               onClick={handleLogout}
               className="bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 cursor-pointer"
             >

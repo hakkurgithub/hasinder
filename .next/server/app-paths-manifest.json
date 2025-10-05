@@ -1,3 +1,8 @@
 {
-  "/page": "app/page.js"
+  "/page": "app/page.js",
+  "/firsatlar/[id]/page": "app/firsatlar/[id]/page.js",
+  "/kesfet/page": "app/kesfet/page.js",
+  "/akilli-eslestirme/page": "app/akilli-eslestirme/page.js",
+  "/etkinlikler/page": "app/etkinlikler/page.js",
+  "/iletisim/page": "app/iletisim/page.js"
 }

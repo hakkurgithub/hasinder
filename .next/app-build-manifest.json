@@ -15,6 +15,31 @@
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
+    ],
+    "/firsatlar/[id]/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/firsatlar/[id]/page.js"
+    ],
+    "/kesfet/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/kesfet/page.js"
+    ],
+    "/akilli-eslestirme/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/akilli-eslestirme/page.js"
+    ],
+    "/etkinlikler/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/etkinlikler/page.js"
+    ],
+    "/iletisim/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/chunks/app/iletisim/page.js"
     ]
   }
 }
