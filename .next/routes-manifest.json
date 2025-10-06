@@ -1,1 +1,136 @@
-{"version":3,"caseSensitive":false,"basePath":"","rewrites":{"beforeFiles":[],"afterFiles":[],"fallback":[]},"redirects":[{"source":"/:path+/","destination":"/:path+","permanent":true,"internal":true,"regex":"^(?:\\/((?:[^\\/]+?)(?:\\/(?:[^\\/]+?))*))\\/$"},{"source":"/basinda-biz","destination":"/","permanent":true,"regex":"^(?!\\/_next)\\/basinda-biz(?:\\/)?$"}],"headers":[]}
+{
+  "version": 3,
+  "pages404": true,
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    },
+    {
+      "source": "/basinda-biz",
+      "destination": "/",
+      "statusCode": 308,
+      "regex": "^(?!/_next)/basinda-biz(?:/)?$"
+    }
+  ],
+  "headers": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [
+    {
+      "page": "/firsatlar/[id]",
+      "regex": "^/firsatlar/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/firsatlar/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/kesfet/[id]",
+      "regex": "^/kesfet/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/kesfet/(?<nxtPid>[^/]+?)(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/_not-found",
+      "regex": "^/_not\\-found(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/_not\\-found(?:/)?$"
+    },
+    {
+      "page": "/admin/haberler",
+      "regex": "^/admin/haberler(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin/haberler(?:/)?$"
+    },
+    {
+      "page": "/akilli-eslestirme",
+      "regex": "^/akilli\\-eslestirme(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/akilli\\-eslestirme(?:/)?$"
+    },
+    {
+      "page": "/dns-kayitlari",
+      "regex": "^/dns\\-kayitlari(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/dns\\-kayitlari(?:/)?$"
+    },
+    {
+      "page": "/etkinlikler",
+      "regex": "^/etkinlikler(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/etkinlikler(?:/)?$"
+    },
+    {
+      "page": "/firma-profili",
+      "regex": "^/firma\\-profili(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/firma\\-profili(?:/)?$"
+    },
+    {
+      "page": "/giris",
+      "regex": "^/giris(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/giris(?:/)?$"
+    },
+    {
+      "page": "/hakkimizda",
+      "regex": "^/hakkimizda(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/hakkimizda(?:/)?$"
+    },
+    {
+      "page": "/iletisim",
+      "regex": "^/iletisim(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/iletisim(?:/)?$"
+    },
+    {
+      "page": "/kesfet",
+      "regex": "^/kesfet(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/kesfet(?:/)?$"
+    },
+    {
+      "page": "/pazarlama-araclari",
+      "regex": "^/pazarlama\\-araclari(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/pazarlama\\-araclari(?:/)?$"
+    }
+  ],
+  "dataRoutes": [],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSuffix": ".prefetch.rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments"
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}
