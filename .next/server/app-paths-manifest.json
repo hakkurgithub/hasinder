@@ -1,16 +1,1 @@
-{
-  "/_not-found/page": "app/_not-found/page.js",
-  "/dns-kayitlari/page": "app/dns-kayitlari/page.js",
-  "/admin/haberler/page": "app/admin/haberler/page.js",
-  "/etkinlikler/page": "app/etkinlikler/page.js",
-  "/akilli-eslestirme/page": "app/akilli-eslestirme/page.js",
-  "/firma-profili/page": "app/firma-profili/page.js",
-  "/hakkimizda/page": "app/hakkimizda/page.js",
-  "/giris/page": "app/giris/page.js",
-  "/iletisim/page": "app/iletisim/page.js",
-  "/kesfet/page": "app/kesfet/page.js",
-  "/page": "app/page.js",
-  "/pazarlama-araclari/page": "app/pazarlama-araclari/page.js",
-  "/kesfet/[id]/page": "app/kesfet/[id]/page.js",
-  "/firsatlar/[id]/page": "app/firsatlar/[id]/page.js"
-}
+{}

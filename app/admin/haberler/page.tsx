@@ -119,13 +119,13 @@ export default function AdminHaberler() {
           ) : (
             <div className="space-y-4">
               {haberler.map((haber: any) => (
-                <div key={haber._id} className="border rounded-lg p-4 flex justify-between items-center">
+                <div key={haber.id} className="border rounded-lg p-4 flex justify-between items-center">
                   <div>
                     <h3 className="font-semibold">{haber.baslik}</h3>
                     <p className="text-sm text-gray-600">{haber.icerik.slice(0, 100)}...</p>
                   </div>
                   <button
-                    onClick={() => handleDelete(haber._id)}
+                    onClick={() => handleDelete(haber.id)}
                     className="bg-red-600 text-white px-3 py-1 rounded hover:bg-red-700"
                   >
                     Sil

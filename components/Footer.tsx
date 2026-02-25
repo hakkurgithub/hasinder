@@ -1,4 +1,3 @@
-
 'use client';
 
 import Link from 'next/link';
@@ -71,6 +70,11 @@ export default function Footer() {
               <li>
                 <Link href="/etkinlikler" className="text-gray-300 hover:text-[#D4AF37] cursor-pointer">
                   Etkinlikler
+                </Link>
+              </li>
+              <li>
+                <Link href="/haberler" className="text-gray-300 hover:text-[#D4AF37] transition-colors">
+                  Haberler
                 </Link>
               </li>
             </ul>

@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useState } from 'react';
@@ -94,8 +93,11 @@ export default function Header() {
               <Link href="/etkinlikler" className="text-gray-700 hover:text-[#1B365D] font-medium">
                 Etkinlikler
               </Link>
-                            <Link href="/iletisim" className="text-gray-700 hover:text-[#1B365D] font-medium">
+              <Link href="/iletisim" className="text-gray-700 hover:text-[#1B365D] font-medium">
                 İletişim
+              </Link>
+              <Link href="/haberler" className="text-gray-700 hover:text-[#1B365D] font-medium">
+                Haberler
               </Link>
             </nav>
 
@@ -176,8 +178,11 @@ export default function Header() {
               <Link href="/etkinlikler" className="block text-gray-700 hover:text-[#1B365D] font-medium">
                 Etkinlikler
               </Link>
-                            <Link href="/iletisim" className="block text-gray-700 hover:text-[#1B365D] font-medium">
+              <Link href="/iletisim" className="block text-gray-700 hover:text-[#1B365D] font-medium">
                 İletişim
+              </Link>
+              <Link href="/haberler" className="block text-gray-700 hover:text-[#1B365D] font-medium">
+                Haberler
               </Link>
 
               {/* Mobile Language Selector */}
