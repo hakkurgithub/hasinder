@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { PrismaClient } from '@prisma/client';
+import { sendEmail } from '@/lib/mailer';
 
 const prisma = new PrismaClient();
 
@@ -35,6 +36,13 @@ export async function POST(request: Request) {
         password, // Not: Canlı sürümde bu şifre kriptolanacaktır.
       }
     });
+
+    // Yönetime Bildirim Maili At
+    await sendEmail(
+      'kurt.hakki@gmail.com',
+      'TİB Ağı - Yeni Kurumsal Kayıt Başvurusu',
+      `<h2>Yeni Firma Onay Bekliyor</h2><p><b>Firma Adı:</b> ${name}</p><p><b>Vergi No:</b> ${taxNo}</p><p><b>Sektör:</b> ${sector}</p><p>Lütfen Admin panelinden başvuruyu inceleyin.</p>`
+    );
 
     return NextResponse.json({ success: true, message: '✅ Kurumsal Kaydınız Alındı. Yönetim onayından sonra sisteme giriş yapabilirsiniz.' }, { status: 201 });
   } catch (error: any) {

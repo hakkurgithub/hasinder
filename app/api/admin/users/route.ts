@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { PrismaClient } from '@prisma/client';
+import { sendEmail } from '@/lib/mailer';
 
 const prisma = new PrismaClient();
 
@@ -26,6 +27,18 @@ export async function PUT(request: Request) {
       where: { id: userId },
       data: { status: newStatus }
     });
+
+    // Firmaya Onay/Ret Maili At
+    const subject = action === 'APPROVE' ? 'TİB Ağı Üyeliğiniz Onaylandı' : 'TİB Ağı Üyelik Başvurunuz Reddedildi';
+    const message = action === 'APPROVE' 
+      ? 'Tebrikler, kurumsal siciliniz onaylanmıştır. Sisteme giriş yapıp ticarete ve komisyon kazanmaya başlayabilirsiniz.'
+      : 'Üyelik başvurunuz platform standartlarını karşılamadığı için reddedilmiştir.';
+    
+    await sendEmail(
+      updatedUser.email,
+      subject,
+      `<h2>Yönetim Kurulu Kararı</h2><p>${message}</p>`
+    );
 
     return NextResponse.json({ success: true, user: updatedUser }, { status: 200 });
   } catch (error: any) {
