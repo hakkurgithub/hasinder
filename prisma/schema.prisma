@@ -1,18 +1,67 @@
-datasource db {
-  provider = "postgresql"
-  url      = env("POSTGRES_PRISMA_URL")
-  directUrl = env("POSTGRES_URL_NON_POOLING")
-}
-
 generator client {
   provider = "prisma-client-js"
 }
 
-model Haber {
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
   id        String   @id @default(cuid())
-  baslik    String
-  icerik    String
-  resim     String?
+  name      String
+  taxNo     String   @unique
+  sector    String
+  role      String
+  email     String   @unique
+  password  String
+  balance   Float    @default(0.0)
+  
+  // YENİ EKLENEN KURUMSAL ALANLAR
+  status    String   @default("ONAY_BEKLIYOR") // ONAY_BEKLIYOR, AKTIF, ENGELLI
+  tier      String   @default("STANDART")      // STANDART, PREMIUM
+  isAdmin   Boolean  @default(false)           // Sadece Yönetici
+  
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+
+  demands     Demand[]    @relation("DemandCreator")
+  mediations  Mediation[] @relation("Mediator")
+  sales       Mediation[] @relation("Seller")
+}
+
+model Demand {
+  id        String   @id @default(cuid())
+  title     String
+  amount    String
+  sector    String
+  status    String   @default("ACIK")
+  creatorId String
+  creator   User     @relation("DemandCreator", fields: [creatorId], references: [id])
+  createdAt DateTime @default(now())
+  mediations Mediation[]
+}
+
+model Mediation {
+  id               String   @id @default(cuid())
+  demandId         String
+  demand           Demand   @relation(fields: [demandId], references: [id])
+  mediatorId       String
+  mediator         User     @relation("Mediator", fields: [mediatorId], references: [id])
+  sellerId         String
+  seller           User     @relation("Seller", fields: [sellerId], references: [id])
+  status           String   @default("BEKLEMEDE")
+  commissionAmount Float    @default(0.0)
+  createdAt        DateTime @default(now())
+}
+
+model LogisticsRoute {
+  id           String   @id @default(cuid())
+  origin       String
+  destination  String
+  vehicleType  String
+  capacity     String
+  targetPrice  Float?
+  status       String   @default("AKTIF")
+  createdAt    DateTime @default(now())
 }
