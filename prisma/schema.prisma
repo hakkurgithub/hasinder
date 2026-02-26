@@ -18,10 +18,13 @@ model User {
   password  String
   balance   Float    @default(0.0)
   
-  // YENİ EKLENEN KURUMSAL ALANLAR
-  status    String   @default("ONAY_BEKLIYOR") // ONAY_BEKLIYOR, AKTIF, ENGELLI
-  tier      String   @default("STANDART")      // STANDART, PREMIUM
-  isAdmin   Boolean  @default(false)           // Sadece Yönetici
+  status    String   @default("ONAY_BEKLIYOR")
+  tier      String   @default("STANDART")
+  isAdmin   Boolean  @default(false)
+  
+  // YENİ EKLENEN PROFİL ALANLARI
+  iban      String?
+  phone     String?
   
   createdAt DateTime @default(now())
 

@@ -1,49 +1,35 @@
+import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
+import './globals.css';
 
-import type { Metadata } from "next";
-import { Geist, Geist_Mono, Pacifico } from "next/font/google";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
-
-const pacifico = Pacifico({
-  weight: '400',
-  subsets: ['latin'],
-  display: 'swap',
-  variable: '--font-pacifico',
-})
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: "Hatay İş Platformu",
-  description: "Hatay'da iş fırsatları ve şirket tanıtımları",
+  title: 'TİB Ağı | Hatay İş Dünyası Ticaret Portalı',
+  description: 'Sıfır sermaye ile B2B ticaret ağınıza katılın, eşleştirmelerden anında komisyon kazanın. Sadece resmi kaydı olan iş insanlarının buluştuğu güvenli ticaret ağı.',
+  keywords: ['Hatay', 'İstanbul', 'TİB Ağı', 'B2B', 'Ticaret', 'Lojistik', 'Gıda', 'İnşaat', 'Komisyon', 'Sıfır Sermaye'],
+  authors: [{ name: 'Hakkı Kurt - HASİNDER' }],
+  openGraph: {
+    title: 'TİB Ağı | Hatay İş Dünyası Ticaret Portalı',
+    description: 'MahalleKoop ve EsnafPay vizyonuyla iş insanlarını bir araya getirin. Sıfır yatırımla düzenli gelir elde edin.',
+    url: 'https://hasinder-mega.vercel.app',
+    siteName: 'TİB Ağı',
+    locale: 'tr_TR',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
-    <html lang="tr" suppressHydrationWarning={true}>
+    <html lang="tr">
       <head>
-        <link href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.5.0/remixicon.min.css" rel="stylesheet" />
-        <script src="https://cdn.tailwindcss.com"></script>
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
       </head>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} ${pacifico.variable} antialiased`}
-      >
-        <Header />
-        {children}
-        <Footer />
-      </body>
+      <body className={inter.className}>{children}</body>
     </html>
   );
 }
